@@ -1,0 +1,8 @@
+version: '2'
+services:
+ mysql:
+   image: centos/mysql-57-centos7:latest
+   environment:        
+    MYSQL_USER=test
+   ports:
+    - "3306:3306"
