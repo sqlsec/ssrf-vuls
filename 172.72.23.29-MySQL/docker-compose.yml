@@ -1,0 +1,13 @@
+version: '2'
+services:
+ mysql:
+    image: mysql:5.6
+    environment:        
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - ./flag:/flag
+      - ./flag.sql:/docker-entrypoint-initdb.d/flag.sql
+      - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+      - ./mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+    expose:
+      - "3306"
